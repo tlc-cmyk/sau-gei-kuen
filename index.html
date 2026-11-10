@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#f3ead8" />
+  <meta name="description" content="收機拳——一拳打走行人嘅手機。撳螢幕，拳頭由上面打落，打中先算數。" />
+  <title>收機拳</title>
+  <link rel="stylesheet" href="style.css?v=20261110a" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f3ead8'/%3E%3Crect x='26' y='4' width='16' height='28' rx='6' fill='%233f5c3d'/%3E%3Crect x='25' y='28' width='18' height='6' rx='2' fill='%23f0e6d2' stroke='%232c241c' stroke-width='1.5'/%3E%3Crect x='24' y='33' width='22' height='24' rx='8' fill='%23f0c49a' stroke='%232c241c' stroke-width='2'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <div id="safe-probe" aria-hidden="true"></div>
+  <div id="app">
+    <canvas id="stage" aria-label="收機拳遊戲畫面"></canvas>
+
+    <div id="hud" class="hud hidden">
+      <button type="button" id="btn-mute-play" class="icon-btn" aria-label="靜音">聲</button>
+    </div>
+
+    <section id="screen-title" class="panel panel-title" aria-labelledby="game-title">
+      <div class="brand">
+        <p class="eyebrow">街頭小遊戲</p>
+        <h1 id="game-title">收機拳</h1>
+        <p class="subtitle">一拳打走行人嘅手機</p>
+      </div>
+      <div class="panel-inner">
+        <ul class="howto">
+          <li>撳螢幕，拳頭就由上面打落；虛線係瞄準位置。</li>
+          <li>打中<strong>手機同持機嗰隻手</strong>先計分，打中空身手人唔計。</li>
+          <li>一拳可同時收走排成一列嘅幾支機；出拳後等圈圈充能再打。</li>
+        </ul>
+        <button type="button" id="btn-start" class="btn primary">開始</button>
+        <button type="button" id="btn-mute-title" class="btn ghost">聲音：開</button>
+      </div>
+    </section>
+
+    <section id="screen-result" class="panel hidden" aria-labelledby="result-title">
+      <div class="panel-inner result-inner">
+        <p class="eyebrow">今次收成</p>
+        <h2 id="result-title">評級</h2>
+        <p id="result-grade" class="grade">—</p>
+        <p id="result-score" class="result-score">0 支</p>
+        <p id="result-best" class="result-best"></p>
+        <p id="result-blurb" class="result-sub"></p>
+        <button type="button" id="btn-retry" class="btn primary">再嚟一次</button>
+        <button type="button" id="btn-home" class="btn ghost">返回標題</button>
+        <button type="button" id="btn-mute-result" class="btn ghost">聲音：開</button>
+      </div>
+    </section>
+
+    <div id="rotate-hint" class="rotate-hint hidden">請將裝置直立</div>
+  </div>
+
+  <script src="audio.js?v=20261110a"></script>
+  <script src="game.js?v=20261110a"></script>
+</body>
+</html>
